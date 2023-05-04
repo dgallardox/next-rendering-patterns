@@ -11,12 +11,12 @@ export default function Navbar() {
             <p id={Styles.activeLink}>Static</p>
           </li>
           <li>
-            <Link href="https://h31hnyx205v6wp9ae7dv4lvsz.js.wpenginepowered.com/">
+            <Link href="https://server.dailybyte.org">
               Server
             </Link>
           </li>
           <li>
-            <Link href="https://h6d1uw5uhqj1e99ot4pe390b9.js.wpenginepowered.com/">
+            <Link href="https://client.dailybyte.org">
               Client
             </Link>
           </li>
