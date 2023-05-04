@@ -1,4 +1,4 @@
-# rendering-examples
+# Rendering Examples
 This repository is a basic example of client, server, and static rendering.
 
 ## Tech Stack:
