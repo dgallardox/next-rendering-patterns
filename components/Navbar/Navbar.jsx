@@ -8,12 +8,12 @@ export default function Navbar() {
         <div>DAILY BYTE</div>
         <ul>
           <li>
-            <Link href="https://h31hnyx205v6wp9ae7dv4lvsz.js.wpenginepowered.com/">
+            <Link href="https://static.dailybyte.org">
               Static
             </Link>
           </li>
           <li>
-            <Link href="https://h31hnyx205v6wp9ae7dv4lvsz.js.wpenginepowered.com/">
+            <Link href="https://server.dailybyte.org">
               Server
             </Link>
           </li>
