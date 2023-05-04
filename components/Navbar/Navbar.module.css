@@ -1,0 +1,38 @@
+.navbar {
+  padding: 40px 0 60px 0;
+}
+
+.navbar div {
+  font-size: 40px;
+  font-weight: 700;
+  color: #7ECEE8;
+  margin: 20px 0 10px 0;
+  padding: 0;
+}
+
+.navbar ul {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 0;
+}
+
+#activeLink {
+  font-weight: 650;
+}
+
+@media screen and (min-width: 768px) {
+  #siteTitle {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #siteTitle {
+    font-size: 60px;
+  }
+}
