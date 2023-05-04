@@ -1,0 +1,105 @@
+#heroText {
+  font-size: 40px;
+  font-weight: 700;
+  color: #7ECEE8;
+  margin: 20px 0 10px 0;
+  padding: 0;
+}
+
+#active {
+  font-weight: 700;
+}
+
+#navBar {
+  padding-bottom: 25px;
+}
+
+#list {
+  padding: 0;
+  margin: 0;
+}
+
+#li {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  #heroText {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #heroText {
+    font-size: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #heroText {
+    font-size: 70px;
+  }
+}
+
+#card {
+  width: 80%;
+  background-color: #7ECEE8;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: left;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  transition: all .2s ease-in-out;
+}
+
+#card:hover {
+  transform: scale(1.0125);
+}
+
+#title {
+  margin: 0;
+  padding-bottom: 20px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+#imageDiv {
+  width: 100%;
+  height: 280px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.res {
+  text-align: center;
+}
+
+@media screen and (min-width: 676px) {
+  #card {
+  width: 70%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #card {
+  width: 60%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #card {
+  width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #card {
+  width: 40%;
+  }
+}
+
