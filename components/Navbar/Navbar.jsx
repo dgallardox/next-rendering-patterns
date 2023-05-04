@@ -13,7 +13,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <p id={Styles.activeLink}>Static</p>
+            <p id={Styles.activeLink}>Server</p>
           </li>
           <li>
             <Link href="https://h6d1uw5uhqj1e99ot4pe390b9.js.wpenginepowered.com/">
