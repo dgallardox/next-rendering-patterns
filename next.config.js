@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["wpwpengineatla.wpenginepowered.com"],
+    domains: [process.env.IMAGE_SOURCE],
   },
 };
 
