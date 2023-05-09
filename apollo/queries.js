@@ -5,7 +5,7 @@ export const GET_100_POSTS = async () => {
   const { data } = await client.query({
     query: gql`
     query GET_POSTS {
-      posts(first: 100) {
+      posts(first: 1000) {
         nodes {
           id
           slug
