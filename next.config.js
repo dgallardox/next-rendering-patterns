@@ -3,7 +3,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [process.env.IMAGE_SOURCE],
+    domains: ["renderingexamp.wpengine.com"],
   },
 };
 

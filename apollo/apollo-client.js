@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 
 const link = createHttpLink({
-  uri: process.env.GRAPHQL_ENDPOINT,
+  uri: "https://renderingexamp.wpengine.com/graphql",
 });
 
 const client = new ApolloClient({
