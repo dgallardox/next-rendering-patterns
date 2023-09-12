@@ -1,7 +1,8 @@
+import React from "react";
 import { gql } from "@apollo/client";
-import { useRouter } from "next/router";
 import client from "../../apollo/apollo-client";
 import Navbar from "../../components/Navbar/Navbar";
+import { GetStaticProps, GetStaticPaths } from "next";
 
 export default function Slug({ post }) {
   return (
@@ -13,35 +14,35 @@ export default function Slug({ post }) {
   );
 }
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
     fallback: "blocking",
   };
 };
 
-export const getStaticProps = async ({ params }) => {
-  const slug = params.slug;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const slug = params!.slug;
 
-  try {
-    const { data } = await client.query({
-      query: GET_POST,
+  const { data, errors } = await client.query({
+    query: GET_POST,
+    variables: {
+      id: slug,
+    },
+  });
 
-      variables: {
-        id: slug,
-      },
-    });
-  } catch (err) {
+  if (errors || !data || !data.post) {
+    console.log("errors: ", errors);
     return {
       notFound: true,
     };
+  } else {
+    return {
+      props: {
+        post: data.post,
+      },
+    };
   }
-
-  return {
-    props: {
-      post: data.post,
-    },
-  };
 };
 
 const GET_POST = gql`
