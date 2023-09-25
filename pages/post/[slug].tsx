@@ -35,12 +35,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     console.log("errors: ", errors);
     return {
       notFound: true,
+      revalidate: 10
     };
   } else {
     return {
       props: {
         post: data.post,
       },
+      revalidate: 10
     };
   }
 };
