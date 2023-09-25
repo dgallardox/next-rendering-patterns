@@ -3,6 +3,7 @@ import { gql } from "@apollo/client";
 import client from "../../apollo/apollo-client";
 import Navbar from "../../components/Navbar/Navbar";
 import { GetStaticProps, GetStaticPaths } from "next";
+import Image from "next/image";
 
 export default function Slug({ post }) {
   return (
@@ -10,6 +11,12 @@ export default function Slug({ post }) {
       <Navbar />
       <h2>{post.title}</h2>
       <p>{post.content}</p>
+        <Image
+          alt='Featured Image'
+          src={post.featuredImage?.node.sourceUrl}
+        width={400}
+        height={300}
+        />
     </>
   );
 }
@@ -52,6 +59,10 @@ const GET_POST = gql`
     post(id: $id, idType: SLUG) {
       title
       content
+      featuredImage {
+            node {
+              sourceUrl
+            }}
     }
   }
 `;
