@@ -3,7 +3,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [NEXT_PUBLIC_WORDPRESS_SITE],
+    domains: [WORDPRESS_SITE],
   },
 };
 
