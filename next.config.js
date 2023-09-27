@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 
-const IMAGE_SOURCE = process.env.IMAGE_SOURCE || null
+const WORDPRESS_SITE = process.env.WORDPRESS_SITE || null
 
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [process.env.IMAGE_SOURCE],
+    domains: [WORDPRESS_SITE],
   },
 };
 
