@@ -8,7 +8,7 @@ export default function Home({ posts }) {
 
   return (
     <>
-      <Navbar />
+      <Navb>
       <ImageGallery posts={posts} />
     </>
   );
