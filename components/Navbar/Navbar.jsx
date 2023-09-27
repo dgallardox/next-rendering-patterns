@@ -5,20 +5,18 @@ export default function Navbar() {
   return (
     <>
       <nav className={Styles.navbar}>
-        <div>DAILY BYTE</div>
+        <h2>
+          <Link href='/'>Server Rendering</Link>
+        </h2>
         <ul>
           <li>
-            <Link href="https://static.dailybyte.org">
-              Static
-            </Link>
+            <Link href='https://static.dailybyte.org'>Static</Link>
           </li>
           <li>
             <p id={Styles.activeLink}>Server</p>
           </li>
           <li>
-            <Link href="https://client.dailybyte.org">
-              Client
-            </Link>
+            <Link href='https://isr.dailybyte.org'>ISR</Link>
           </li>
         </ul>
       </nav>

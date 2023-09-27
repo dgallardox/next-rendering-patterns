@@ -2,7 +2,8 @@ import { gql } from "@apollo/client";
 import client from "./apollo-client";
 
 export const GET_100_POSTS = async () => {
-  const { data } = await client.query({
+  try {
+    const { data } = await client.query({
     query: gql`
       query GET_POSTS {
         posts(first: 1000) {
@@ -24,5 +25,11 @@ export const GET_100_POSTS = async () => {
     `,
   });
 
-  return data.posts.nodes;
+    return data.posts.nodes;
+    
+  } catch (err) {
+    console.error("error in queries.js: ", err);
+    console.error("WORDPRESS_API env var is", process.env.WORDPRESS_API)
+    return null
+  }
 };
