@@ -1,13 +1,19 @@
 import Navbar from "../components/Navbar/Navbar";
 import ImageGallery from "../components/ImageGallery/ImageGallery";
 import { GET_100_POSTS } from "../apollo/queries";
+import Layout from "../components/Layout";
 
 export default function Home({ posts }) {
 
   return (
     <>
-      <Navbar />
-      {posts === null ? <>Nothing to see here....awkward ;)</> : <ImageGallery posts={posts} />}
+      <Layout>
+        {posts === null ? (
+          <>Nothing to see here....awkward ;)</>
+        ) : (
+          <ImageGallery posts={posts} />
+        )}
+      </Layout>
     </>
   );
 }

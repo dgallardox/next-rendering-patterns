@@ -2,6 +2,10 @@
   padding: 40px 0 60px 0;
 }
 
+.navbar h2:hover {
+  color: navy;
+}
+
 .navbar div {
   font-size: 40px;
   font-weight: 700;

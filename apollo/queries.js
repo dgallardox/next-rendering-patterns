@@ -27,9 +27,33 @@ export const GET_100_POSTS = async () => {
 
     return data.posts.nodes;
     
-  } catch (err) {
-    console.error("error in queries.js: ", err);
-    console.error("WORDPRESS_API env var is", process.env.WORDPRESS_API)
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    return null
+  }
+};
+
+export const GET_POST = async (slug) => {
+  try {
+    const { data } = await client.query({
+      query: gql`
+        query GET_POST($uri: ID!) {
+          post(id: $uri, idType: URI) {
+            title
+            content
+          }
+        }
+      `,
+      variables: {
+        uri: `posts/${slug}`,
+      },
+    });
+    
+    console.log(data.post)
+    return data.post;
+    
+  } catch (error) {
+    console.error("Error fetching post:", error);
     return null
   }
 };
