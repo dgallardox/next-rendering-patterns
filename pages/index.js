@@ -9,7 +9,7 @@ export default function Home({ posts }) {
     <>
       <Layout>
         {posts === null ? (
-          <>Nothing to see here....awkward ;)</>
+          <>Nothing to see herex....awkward ;)</>
         ) : (
           <ImageGallery posts={posts} />
         )}
