@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Styles from "./Navbar.module.css";
+
+const navitems = {};
 
 export default function Navbar() {
   return (
