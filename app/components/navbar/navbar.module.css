@@ -1,13 +1,17 @@
 .navbar {
-  padding: 40px 0 60px 0;
+  padding: 30px 20px;
+  margin: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: burlywood;
+  border: white solid 2px;
 }
 
 .navbar div {
   font-size: 40px;
   font-weight: 700;
   color: #7ECEE8;
-  margin: 20px 0 10px 0;
-  padding: 0;
 }
 
 .navbar ul {
@@ -21,9 +25,6 @@
   padding: 0;
 }
 
-#activeLink {
-  font-weight: 650;
-}
 
 @media screen and (min-width: 768px) {
   #siteTitle {

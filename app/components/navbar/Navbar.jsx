@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import Styles from "./Navbar.module.css";
+import Styles from "./navbar.module.css";
 
 const navitems = {};
 
@@ -10,7 +8,7 @@ export default function Navbar() {
     <>
       <nav className={Styles.navbar}>
         <h2>
-          <Link href='/'>ISR</Link>
+          <Link href='/'>Daily Byte</Link>
         </h2>
         <ul>
           <li>

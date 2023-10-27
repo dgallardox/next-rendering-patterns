@@ -1,20 +1,17 @@
-import PostsGrid from "./components/postsGrid/PostsGrid.jsx"
-import styles from "./page.module.css"
-
-export default async function Home() {
-  const { data } = await getPosts()
-
+export default async function Slug(context) {
+  const slug = context.params.slug;
+  const { data } = await getPost(slug);
+  
   return (
     <>
-      <main id={styles.main}>
-        <div>Daily Byte</div>
-      </main>
-      <PostsGrid posts={data.posts.nodes} />
+      <h2>post</h2>
+      <h2>{ data.post.title }</h2>
+      <div dangerouslySetInnerHTML={{__html: data.post.content }} />
     </>
   );
 }
 
-const getPosts = async () => {
+const getPost = async (slug) => {
   try {
     const response = await fetch("https://cms.dailybyte.org/graphql", {
       method: "POST",
@@ -23,9 +20,8 @@ const getPosts = async () => {
       },
       body: JSON.stringify({
         query: `
-          query GET_POSTS {
-            posts(first: 1000) {
-              nodes {
+          query GET_POST($slug: ID!) {
+            post(id: $slug, idType: SLUG) {
                 id
                 slug
                 title
@@ -39,8 +35,8 @@ const getPosts = async () => {
                 }
               }
             }
-          }
         `,
+        variables: { slug },
       }),
     });
 
@@ -49,7 +45,6 @@ const getPosts = async () => {
     }
     const data = await response.json();
     return data;
-
   } catch (error) {
     console.error("Error fetching data:", error);
   }

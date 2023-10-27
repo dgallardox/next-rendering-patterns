@@ -1,0 +1,10 @@
+#main {
+  background-color: burlywood;
+  height: 500px;
+  margin: 0 2px 40px 2px;
+}
+
+#main div {
+  font-size: xx-large;
+  font-weight: 800;
+}
