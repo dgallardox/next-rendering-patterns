@@ -1,0 +1,19 @@
+#main {
+  /* diplay config */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box model */
+  height: 90%;
+  width: 100%;
+  border: white solid 2px;
+  
+  /* design */
+  background-color: burlywood;
+}
+
+#main div {
+  /* design */
+  font-size: 200px;
+  font-weight: 800;
+}

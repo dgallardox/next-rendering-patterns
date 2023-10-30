@@ -1,27 +1,30 @@
 import Link from "next/link";
-import Styles from "./navbar.module.css";
+import styles from "./navbar.module.css";
 
-const navitems = {};
+const links = {
+  posts: "/posts",
+  navitem: "test2.com",
+  navitem: "test3.com",
+};
+const entries = Object.entries(links);
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <>
-      <nav className={Styles.navbar}>
+      <nav className={styles.navbar}>
         <h2>
           <Link href='/'>Daily Byte</Link>
         </h2>
         <ul>
-          <li>
-            <p>Static</p>
-          </li>
-          <li>
-            <Link href='https://server.dailybyte.org'>Server</Link>
-          </li>
-          <li>
-            <Link href='https://client.dailybyte.org'>Client</Link>
-          </li>
+          {entries.map(([title, link]) => (
+            <Link key={title} href={link}>
+              {title}
+            </Link>
+          ))}
         </ul>
       </nav>
     </>
   );
 }
+
+export default Navbar

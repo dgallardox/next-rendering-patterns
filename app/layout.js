@@ -1,12 +1,14 @@
-import Navbar from "./components/navbar/Navbar";
 import { Suspense } from "react";
 import Loading from "./loading";
-import Footer from "./components/footer/Footer.jsx"
-import "./globals.css"
+import "./globals.css";
+import { Navbar, Footer } from "./components/index";
 
-export default function RootLayout({
-  children,
-}) {
+export const metadata = {
+  title: "Dailybyte",
+  description: "Welcome!",
+};
+
+const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
       <body>
@@ -16,9 +18,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
-
-export const metadata = {
-  title: "Dailybyte",
-  description: "Welcome!",
 };
+
+export default RootLayout;
