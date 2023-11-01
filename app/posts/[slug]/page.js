@@ -1,12 +1,23 @@
+import styles from "./page.module.css"
+import Image from "next/image";
+
 export default async function Slug(context) {
   const slug = context.params.slug;
   const { data } = await getPost(slug);
   
   return (
     <>
-      <h2>post</h2>
-      <h2>{ data.post.title }</h2>
-      <div dangerouslySetInnerHTML={{__html: data.post.content }} />
+      <div className={styles.page}>
+        <h2>{data.post.title}</h2>
+        <p>{new Date(data.post.date).toLocaleDateString()}</p>
+        <Image
+          alt='Featured Image'
+          src={data.post.featuredImage?.node.sourceUrl}
+          height={500}
+          width={800}
+        />
+        <div dangerouslySetInnerHTML={{ __html: data.post.content }} />
+      </div>
     </>
   );
 }
