@@ -1,12 +1,24 @@
-import styles from "./search.module.css";
+"use client"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-function Search() {
+export default function Search() {
+  const router = useRouter();
+  const [search, setSearch] = useState("")
+
+  function handleSearch() {
+    router.push(`/search/${search}`)
+  }
+
   return (
     <>
-      <input type='text' placeholder='Search...'  />
-      <button>Search</button>
+      <input
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        type='text'
+        placeholder='search...'
+      />
+      <button onClick={handleSearch}>Search</button>
     </>
   );
 }
-
-export default Search;
