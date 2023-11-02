@@ -1,7 +1,7 @@
 import styles from "./page.module.css"
 import Image from "next/image";
 
-export default async function Slug(context) {
+const Slug = async (context) => {
   const slug = context.params.slug;
   const { data } = await getPost(slug);
   
@@ -21,6 +21,8 @@ export default async function Slug(context) {
     </>
   );
 }
+
+export default Slug;
 
 const getPost = async (slug) => {
   try {

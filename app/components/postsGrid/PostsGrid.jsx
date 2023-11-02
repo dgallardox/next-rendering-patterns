@@ -2,9 +2,9 @@ import Image from "next/image";
 import styles from "./postsGrid.module.css"
 import Link from "next/link";
 
-const PostsGrid = async () => {
+const PostsGrid = async ({count}) => {
 
-  const { data } = await getPosts()
+  const { data } = await getPosts(count)
   const posts = data.posts.nodes
   
   return (
@@ -30,7 +30,7 @@ const PostsGrid = async () => {
   );
 }
 
-const getPosts = async () => {
+const getPosts = async (count) => {
   try {
     const response = await fetch("https://cms.dailybyte.org/graphql", {
       method: "POST",
@@ -40,7 +40,7 @@ const getPosts = async () => {
       body: JSON.stringify({
         query: `
           query GET_POSTS {
-            posts(first: 9) {
+            posts(first: ${count}) {
               nodes {
                 id
                 slug
