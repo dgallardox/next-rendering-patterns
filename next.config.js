@@ -6,7 +6,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/',
+        source: '/posts',
         headers: [
           {
             key: 'Referrer-Policy',
