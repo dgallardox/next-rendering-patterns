@@ -3,20 +3,15 @@
 const WORDPRESS_SITE = process.env.WORDPRESS_SITE
 
 const nextConfig = {
-  async headers() {
+  async redirects() {
     return [
       {
         source: '/posts',
-        headers: [
-          {
-            key: 'Referrer-Policy',
-            value: 'no-referrer',
-          }
-        ],
+        destination: '/posts/test',
+        permanent: true,
       },
     ]
   },
-  reactStrictMode: true,
   images: {
     domains: [WORDPRESS_SITE],
   },
