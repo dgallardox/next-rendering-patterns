@@ -4,7 +4,6 @@ import { GET_100_POSTS } from "../apollo/queries";
 import { useQuery } from "@apollo/client";
 
 export default function Home() {
-
   const { loading, error, data } = useQuery(GET_100_POSTS);
 
   if (error) return <p>Error</p>;

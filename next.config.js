@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 
-const imageSource = process.env.NEXT_PUBLIC_WORDPRESS_URL 
+const removeHTTPS = (url) => url.replace(/^https:\/\//, "");
+const imageSource = removeHTTPS(process.env.NEXT_PUBLIC_WORDPRESS_URL);
 
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [process.env.imageSource],
+    domains: [imageSource],
   },
 };
 
